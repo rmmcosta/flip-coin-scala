@@ -10,7 +10,6 @@ import scala.annotation.tailrec
 
   @tailrec
   def flipIter(flipsHistory: List[List[Flip]], flips: List[Flip]): Unit = {
-
     if (!flips.isEmpty) showGameStatus(flips)
 
     showMenu2
@@ -50,10 +49,10 @@ def showFlipsHistory(flipsHistory: List[List[Flip]]) = {
   if (flipsHistory.isEmpty) println("No Games finished yet")
   else {
     println(s"${flipsHistory.size} game(s) played:\n")
+    println("------ Summary ------")
     flipsHistory.foreach { currHistory =>
-      println("------------")
       showGameStatus(currHistory)
-      println("------------")
     }
+    println("---- End Summary ----\n")
   }
 }
